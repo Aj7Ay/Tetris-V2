@@ -1,4 +1,4 @@
-name: Echo Message and Slack Notification
+name: Example Workflow
 
 on:
   push:
@@ -6,10 +6,13 @@ on:
       - main
 
 jobs:
-  echo-and-notify:
+  build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
       - name: Echo a Message
         run: echo "Hello from GitHub Actions!"
 
