@@ -20,4 +20,4 @@ jobs:
           status: always
           text: 'GitHub Action: A message was echoed.'
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
