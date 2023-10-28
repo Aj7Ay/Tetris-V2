@@ -1,4 +1,4 @@
-name: Echo Message and Slack Notifications
+name: Echo Message and Slack Notification
 
 on:
   push:
