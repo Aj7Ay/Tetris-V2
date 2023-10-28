@@ -15,10 +15,10 @@ jobs:
 
       - name: Send a Slack Notification
         if: always()
-        uses: 8398a7/action-slack@v3
+        uses: act10ns/slack@v1
         with:
-          status: custom
-          text: 'GitHub Action: A message was echoed.'
-          author_name: 8398a7@action-slack
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#git'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
