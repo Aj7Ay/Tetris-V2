@@ -1,4 +1,4 @@
-name: Example Workflow
+name: Echo Message and Slack Notification
 
 on:
   push:
@@ -6,13 +6,10 @@ on:
       - main
 
 jobs:
-  build:
+  echo-and-notify:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
       - name: Echo a Message
         run: echo "Hello from GitHub Actions!"
 
@@ -22,5 +19,6 @@ jobs:
         with:
           status: custom
           text: 'GitHub Action: A message was echoed.'
+          author_name: 8398a7@action-slack
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
